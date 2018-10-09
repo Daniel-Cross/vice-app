@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import '../styles/Home.css';
+import Logo from './Logo';
+import Calculator from './Calculator';
 
 class Home extends Component {
   constructor(props) {
@@ -7,7 +9,12 @@ class Home extends Component {
     this.state = {};
   }
   render() {
-    return <div className="Home">APP FUNCTION HERE</div>;
+    return (
+      <div className="Home">
+        <Logo />
+        <Calculator />
+      </div>
+    );
   }
 }
 
