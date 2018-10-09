@@ -1,0 +1,13 @@
+.Logo {
+  text-shadow: 2px 2px 1px black;
+  width: 20%;
+  margin: auto;
+  padding-top: 20px;
+}
+
+.logo {
+  border: 2px solid white;
+  margin-top: 20px;
+  padding: 15px;
+
+}
