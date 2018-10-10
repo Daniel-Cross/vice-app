@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
-import ExpansionPanel from '@material-ui/core/ExpansionPanel';
-import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
-import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import '../styles/Result.css';
 
 class Result extends Component {
   constructor(props) {
@@ -23,20 +20,22 @@ class Result extends Component {
     };
     return (
       <div className="Result">
-        <ExpansionPanel style={styles.background}>
-          <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-            <h4 style={styles.background}>Result</h4>
-          </ExpansionPanelSummary>
-          <ExpansionPanelDetails>
-            <p style={styles.background}>
-              {this.props.amount} - Weekly
-              <br />
-              {this.props.amount * 4} - Monthly
-              <br />
-              {this.props.amount * 52} - Yearly
+        <h1 className="result-title" style={styles.background}>
+          Result
+        </h1>
+        <div className="result-body">
+          <div className="result-1">
+            <p>
+              {`You spend £${this.props.amount} a week on ${this.props.vice}.`}
             </p>
-          </ExpansionPanelDetails>
-        </ExpansionPanel>
+          </div>
+          <div className="result-2">
+            <p>{`That's £${this.props.amount * 4} a month.`}</p>
+          </div>
+          <div className="result-3">
+            <p>{`And £${this.props.amount * 52} a year...`}</p>
+          </div>
+        </div>
       </div>
     );
   }

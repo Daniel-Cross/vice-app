@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import '../styles/Calculator.css';
 import TextField from '@material-ui/core/TextField';
 import Paper from '@material-ui/core/Paper';
+import Button from '@material-ui/core/Button';
 
 class Calculator extends Component {
   constructor(props) {
@@ -19,6 +20,11 @@ class Calculator extends Component {
         width: '90%',
         margin: '5px',
         padding: '5px'
+      },
+      button: {
+        margin: '15px',
+        padding: '20px',
+        width: '60%'
       }
     };
 
@@ -50,6 +56,14 @@ class Calculator extends Component {
             />
           </Paper>
         </div>
+        <Button
+          variant="contained"
+          color="secondary"
+          style={styles.button}
+          onClick={this.props.handleOnClick}
+        >
+          Submit
+        </Button>
       </div>
     );
   }
