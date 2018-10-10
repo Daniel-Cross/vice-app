@@ -1,0 +1,14 @@
+.Calculator {
+  background-color: rgb(32, 32, 32);
+  color: white;
+  margin-top: 20px;
+}
+
+.inputs {
+  flex-direction: column;
+}
+
+.vice-input {
+  width: 90%;
+  margin: auto;
+}
