@@ -23,7 +23,7 @@
 }
 
 .sign-four {
-  -webkit-transform: matrix3d(0.77, 0, -0.64, -.001, 0.00, 1, 0.00, 0, 0.64, 0, 0.77, 0, 0, 0, 0, 1);
+  /* -webkit-transform: matrix3d(0.77, 0, -0.64, -.001, 0.00, 1, 0.00, 0, 0.64, 0, 0.77, 0, 0, 0, 0, 1); */
   color: #F0D6DE;
   font-family: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/707108/clip.ttf');
   font-size: 60px;
@@ -31,7 +31,7 @@
   line-height: 6vw;
   margin-top: 5px;
   margin-right: 2vw;
-  transform: matrix3d(0.77, 0, -0.64, -.001, 0.00, 1, 0.00, 0, 0.64, 0, 0.77, 0, 0, 0, 0, 1);
+  /* transform: matrix3d(0.77, 0, -0.64, -.001, 0.00, 1, 0.00, 0, 0.64, 0, 0.77, 0, 0, 0, 0, 1); */
   text-shadow:
     .1vw 0vw .25vw #F0D6DE, .2vw 0vw .25vw #F0D6DE, .4vw 0vw .25vw #F0D6DE,
     .1vw 0vw .1vw #F181B2, .2vw 0vw 0vw #F181B2, .4vw 0vw 0vw #F181B2,

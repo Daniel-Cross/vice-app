@@ -1,0 +1,33 @@
+.Item {
+  background-color: rgb(32, 32, 32);
+  color: white;
+  margin-top: 50px;
+}
+
+.inputs {
+  flex-direction: column;
+}
+
+.item-input {
+  width: 90%;
+  margin: auto;
+}
+
+.desire {
+  /* -webkit-transform: matrix3d(0.77, 0, -0.64, -.001, 0.00, 1, 0.00, 0, 0.64, 0, 0.77, 0, 0, 0, 0, 1); */
+  color: #F0D6DE;
+  font-family: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/707108/clip.ttf');
+  font-size: 30px;
+  line-height: 4vw;
+  margin-right: 2vw;
+  padding: 30px 0;
+  /* transform: matrix3d(0.77, 0, -0.64, -.001, 0.00, 1, 0.00, 0, 0.64, 0, 0.77, 0, 0, 0, 0, 1); */
+  text-shadow:
+    .1vw 0vw .25vw #F0D6DE, .2vw 0vw .25vw #F0D6DE, .4vw 0vw .25vw #F0D6DE,
+    .1vw 0vw .1vw #F181B2, .2vw 0vw 0vw #F181B2, .4vw 0vw 0vw #F181B2,
+    .1vw 0vw .1vw #F181B2, .2vw 0vw .1vw #F181B2, .4vw 0vw 0vw #F181B2,
+    .1vw 0vw 1vw #F181B2, .2vw 0vw 2vw #F181B2, .4vw 0vw 2vw #F181B2, .2vw 0vw 5vw #F181B2,
+    .1vw 0vw .5vw #F20B70, .2vw 0vw .5vw #F20B70, .4vw 0vw 6vw #F20B70,
+    .1vw 0vw 4vw #F20B70, .2vw 0vw 20vw #F20B70, .4vw 0vw 10vw #F20B70,
+    .1vw 0vw 10vw #F20B70, .2vw 0vw 30vw #F20B70, .4vw 0vw 10vw #F20B70;
+}

@@ -3,7 +3,7 @@ import '../styles/Home.css';
 import Logo from './Logo';
 import Calculator from './Calculator';
 import Result from './Result';
-import PropTypes from 'prop-types';
+import Item from './Item';
 
 class Home extends Component {
   constructor(props) {
@@ -11,6 +11,8 @@ class Home extends Component {
     this.state = {
       vice: '',
       amount: 0,
+      item: '',
+      save: 0,
       showResult: false
     };
   }
@@ -39,6 +41,12 @@ class Home extends Component {
         />
         {this.state.showResult ? (
           <Result vice={this.state.vice} amount={this.state.amount} />
+        ) : null}
+        {this.state.showResult ? (
+          <Item
+            handleInputChange={this.handleInputChange}
+            handleOnClick={this.handleOnClick}
+          />
         ) : null}
       </div>
     );

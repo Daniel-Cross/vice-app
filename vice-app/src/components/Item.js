@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import '../styles/Calculator.css';
 import TextField from '@material-ui/core/TextField';
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
+import '../styles/Item.css';
 
-class Calculator extends Component {
+class Item extends Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -29,26 +29,27 @@ class Calculator extends Component {
     };
 
     return (
-      <div className="Calculator">
+      <div className="Item">
         <div className="inputs">
-          <Paper className="vice-input">
+          <h1 className="desire">WANT SOMETHING?</h1>
+          <Paper className="item-input">
             <TextField
               className="classes.textField"
-              label="Name Your Vice"
+              label="Item You're Saving For"
               type="text"
-              name="vice"
-              value={this.state.vice}
+              name="item"
+              value={this.state.item}
               margin="normal"
               variant="outlined"
               style={styles.width}
               onChange={this.props.handleInputChange}
             />
             <TextField
-              className="vice-input"
-              label="Weekly Amount (£)"
+              className="item-input"
+              label="Amount Needed (£)"
               type="number"
-              name="amount"
-              value={this.state.amount}
+              name="save"
+              value={this.state.save}
               margin="normal"
               variant="outlined"
               style={styles.width}
@@ -60,13 +61,13 @@ class Calculator extends Component {
           variant="contained"
           color="secondary"
           style={styles.button}
-          onClick={this.props.handleOnClick}
+          // onClick={this.props.handleOnClick}
         >
-          Make Me Feel Bad
+          Submit
         </Button>
       </div>
     );
   }
 }
 
-export default Calculator;
+export default Item;
