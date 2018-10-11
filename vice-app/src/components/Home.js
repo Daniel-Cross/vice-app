@@ -5,6 +5,24 @@ import Calculator from './Calculator';
 import Result from './Result';
 import Item from './Item';
 import ItemResult from './ItemResult';
+import CircularProgress from '@material-ui/core/CircularProgress';
+import Fade from '@material-ui/core/Fade';
+import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
+
+const styles = theme => ({
+  root: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center'
+  },
+  button: {
+    margin: theme.spacing.unit * 2
+  },
+  placeholder: {
+    height: 40
+  }
+});
 
 class Home extends Component {
   constructor(props) {
@@ -15,9 +33,40 @@ class Home extends Component {
       item: '',
       save: 0,
       showResult: false,
-      showItemResult: false
+      showItemResult: false,
+      loading: false,
+      query: 'idle'
     };
   }
+
+  componentWillUnmount() {
+    clearTimeout(this.timer);
+  }
+
+  handleClickLoading = () => {
+    this.setState(state => ({
+      loading: !state.loading
+    }));
+  };
+
+  handleClickQuery = () => {
+    clearTimeout(this.timer);
+    if (this.state.query !== 'idle') {
+      this.setState({
+        query: 'idle'
+      });
+      return;
+    }
+
+    this.setState({
+      query: 'progress'
+    });
+    this.timer = setTimeout(() => {
+      this.setState({
+        query: 'success'
+      });
+    }, 2e3);
+  };
 
   handleInputChange = e => {
     const { name, value } = e.target;
@@ -42,13 +91,33 @@ class Home extends Component {
   };
 
   render() {
+    const { classes } = this.props;
+    const { loading, query } = this.state;
+
     return (
       <div className="Home">
         <Logo />
         <Calculator
           handleInputChange={this.handleInputChange}
           handleOnClick={this.handleOnClick}
+          handleClickQuery={this.handleClickQuery}
         />
+        <div className="load-bar">
+          {query === 'success' ? (
+            <Typography>Success!</Typography>
+          ) : (
+            <Fade
+              in={query === 'progress'}
+              style={{
+                transitionDelay: query === 'progress' ? '10ms' : '0ms'
+              }}
+              unmountOnExit
+            >
+              <CircularProgress />
+            </Fade>
+          )}
+        </div>
+
         {this.state.showResult ? (
           <Result vice={this.state.vice} amount={this.state.amount} />
         ) : null}
