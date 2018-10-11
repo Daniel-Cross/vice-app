@@ -67,7 +67,7 @@ class Result extends Component {
         return (
           <p className="humor">
             Good job! We've all got to live a little right? Everything is fine
-            in moderation!
+            in moderation, everything...
           </p>
         );
       }
@@ -78,7 +78,7 @@ class Result extends Component {
         <h1 className="result-title" style={styles.background}>
           RESULT
         </h1>
-        {/* <div className="result-body">
+        <div className="result-body">
           <div className="result-1">
             <p>
               {`You spend £${this.props.amount} a week on ${this.props.vice}.`}
@@ -90,7 +90,7 @@ class Result extends Component {
           <div className="result-3">
             <p>{`And £${this.props.amount * 52} a year...`}</p>
           </div>
-        </div> */}
+        </div>
         <div className="feedback">
           <span className="ad">AD</span>
           <span className="advice">VICE</span>

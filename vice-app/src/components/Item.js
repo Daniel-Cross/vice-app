@@ -61,7 +61,7 @@ class Item extends Component {
           variant="contained"
           color="secondary"
           style={styles.button}
-          // onClick={this.props.handleOnClick}
+          onClick={this.props.handleOnItemClick}
         >
           Submit
         </Button>

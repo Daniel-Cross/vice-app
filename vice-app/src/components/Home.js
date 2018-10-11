@@ -4,6 +4,7 @@ import Logo from './Logo';
 import Calculator from './Calculator';
 import Result from './Result';
 import Item from './Item';
+import ItemResult from './ItemResult';
 
 class Home extends Component {
   constructor(props) {
@@ -13,7 +14,8 @@ class Home extends Component {
       amount: 0,
       item: '',
       save: 0,
-      showResult: false
+      showResult: false,
+      showItemResult: false
     };
   }
 
@@ -27,6 +29,14 @@ class Home extends Component {
     if (
       this.state.amount && this.state.vice
         ? this.setState(state => ({ showResult: !state.showResult }))
+        : null
+    );
+  };
+
+  handleOnItemClick = () => {
+    if (
+      this.state.item && this.state.save
+        ? this.setState(state => ({ showItemResult: !state.showItemResult }))
         : null
     );
   };
@@ -45,7 +55,15 @@ class Home extends Component {
         {this.state.showResult ? (
           <Item
             handleInputChange={this.handleInputChange}
-            handleOnClick={this.handleOnClick}
+            handleOnItemClick={this.handleOnItemClick}
+          />
+        ) : null}
+        {this.state.showItemResult ? (
+          <ItemResult
+            item={this.state.item}
+            save={this.state.save}
+            amount={this.state.amount}
+            vice={this.state.vice}
           />
         ) : null}
       </div>
