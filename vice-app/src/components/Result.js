@@ -6,6 +6,7 @@ class Result extends Component {
     super(props);
     this.state = {};
   }
+
   render() {
     const styles = {
       background: {
