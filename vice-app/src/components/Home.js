@@ -7,6 +7,7 @@ import Item from './Item';
 import ItemResult from './ItemResult';
 import { css } from 'react-emotion';
 import { BarLoader } from 'react-spinners';
+import Button from '@material-ui/core/Button';
 
 const override = css`
   display: block;
@@ -26,9 +27,9 @@ class Home extends Component {
       showItemResult: false,
       loading: true,
       showResult: false,
-      revealResult: false
+      yearTotal: 0,
+      renderResult: null
     };
-    this.interval = null;
   }
 
   handleInputChange = e => {
@@ -46,8 +47,10 @@ class Home extends Component {
 
     this.setState({ renderResult: true });
 
-    this.interval = setTimeout(
-      () => this.setState({ renderResult: false }),
+    this.setState({ yearTotal: this.state.amount * 52 });
+
+    setTimeout(
+      () => this.setState({ renderResult: false, loading: false }),
       5000
     );
 
@@ -62,7 +65,19 @@ class Home extends Component {
     );
   };
 
+  handleResetClick = () => {
+    window.location.reload();
+  };
+
   render() {
+    const styles = {
+      button: {
+        margin: '15px',
+        padding: '20px',
+        width: '20%'
+      }
+    };
+
     return (
       <div className="Home">
         <Logo />
@@ -93,6 +108,8 @@ class Home extends Component {
             vice={this.state.vice}
             amount={this.state.amount}
             result={this.state.showResult}
+            advice={this.state.advice}
+            total={this.state.yearTotal}
           />
         ) : null}
         {this.state.showResult ? (
@@ -108,6 +125,18 @@ class Home extends Component {
             amount={this.state.amount}
             vice={this.state.vice}
           />
+        ) : null}
+
+        {this.state.showResult ? (
+          <Button
+            variant="contained"
+            color="default"
+            style={styles.button}
+            onClick={this.handleResetClick}
+            type="submit"
+          >
+            Reset
+          </Button>
         ) : null}
       </div>
     );

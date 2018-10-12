@@ -31,13 +31,13 @@ class Calculator extends Component {
     return (
       <div className="Calculator">
         <div className="inputs">
-          <Paper className="vice-input">
+          <Paper>
             <TextField
               className="classes.textField"
               label="Name Your Vice"
               type="text"
               name="vice"
-              value={this.state.vice}
+              value={this.props.vice}
               margin="normal"
               variant="outlined"
               style={styles.width}
@@ -48,7 +48,7 @@ class Calculator extends Component {
               label="Weekly Amount (£)"
               type="number"
               name="amount"
-              value={this.state.amount}
+              value={this.props.amount}
               margin="normal"
               variant="outlined"
               style={styles.width}
@@ -56,11 +56,13 @@ class Calculator extends Component {
             />
           </Paper>
         </div>
+
         <Button
           variant="contained"
           color="secondary"
           style={styles.button}
           onClick={this.props.handleOnClick}
+          type="submit"
         >
           Make Me Feel Bad
         </Button>

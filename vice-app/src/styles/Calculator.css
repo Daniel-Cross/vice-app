@@ -6,9 +6,6 @@
 
 .inputs {
   flex-direction: column;
-}
-
-.vice-input {
   width: 90%;
   margin: auto;
 }

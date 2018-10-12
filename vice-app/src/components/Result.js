@@ -8,41 +8,29 @@ class Result extends Component {
   }
 
   render() {
-    const styles = {
-      background: {
-        backgroundColor: 'rgb(32, 32, 32)',
-        color: 'white'
-      },
-      width: {
-        width: '90%',
-        margin: '5px',
-        padding: '5px'
-      }
-    };
-
     const feedbackLoop = () => {
-      if (this.props.amount * 52 > 499) {
+      if (this.props.total > 499 && this.props.total < 1000) {
         return (
           <p className="humor">
             Could be worse, the guy before you was spending £10,000 a year on
             cucumbers. We don't ask questions...
           </p>
         );
-      } else if (this.props.amount * 52 > 999) {
+      } else if (this.props.total > 999 && this.props.total < 2500) {
         return (
           <p className="humor">
             You should probably spend that money on therapy, you obviously need
             it.
           </p>
         );
-      } else if (this.props.amount * 52 > 2499) {
+      } else if (this.props.total > 2499 && this.props.total < 5000) {
         return (
           <p className="humor">
             How do you live with yourself? You're sick, you should definitely
             get help.
           </p>
         );
-      } else if (this.props.amount * 52 > 4999) {
+      } else if (this.props.total > 4999 && this.props.total < 7500) {
         return (
           <p className="humor">
             WTF! Seriously!? Wow... you're a special kind of pervert... and your
@@ -50,14 +38,14 @@ class Result extends Component {
             they must be so proud.
           </p>
         );
-      } else if (this.props.amount * 52 > 7499) {
+      } else if (this.props.total > 7499 && this.props.total < 10000) {
         return (
           <p className="humor">
             And your parents said you would never amount to anything, look at
             you now, they must be so proud...
           </p>
         );
-      } else if (this.props.amount * 52 > 9999) {
+      } else if (this.props.total > 9999) {
         return (
           <p className="humor">
             You are going to die very soon. Probably for the best because you
@@ -76,9 +64,7 @@ class Result extends Component {
 
     return (
       <div className="Result">
-        <h1 className="result-title" style={styles.background}>
-          RESULT
-        </h1>
+        <h1 className="result-title">RESULT</h1>
         <div className="result-body">
           <div className="result-1">
             <p>
@@ -95,6 +81,7 @@ class Result extends Component {
         <div className="feedback">
           <span className="ad">AD</span>
           <span className="advice">VICE</span>
+
           {feedbackLoop()}
         </div>
       </div>
