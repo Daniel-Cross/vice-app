@@ -28,7 +28,10 @@ class Home extends Component {
       loading: true,
       showResult: false,
       yearTotal: 0,
-      renderResult: null
+      renderResult: null,
+      renderItemResult: null,
+      showMore: false,
+      showMoreButton: false
     };
   }
 
@@ -50,23 +53,42 @@ class Home extends Component {
     this.setState({ yearTotal: this.state.amount * 52 });
 
     setTimeout(
-      () => this.setState({ renderResult: false, loading: false }),
+      () => this.setState({ renderResult: false, showResult: false }),
       5000
     );
 
-    setTimeout(() => this.setState({ showResult: true }), 5000);
+    setTimeout(
+      () => this.setState({ showResult: true, showMoreButton: true }),
+      5000
+    );
   };
 
   handleOnItemClick = () => {
     if (
       this.state.item && this.state.save
-        ? this.setState(state => ({ showItemResult: !state.showItemResult }))
+        ? this.setState(state => ({ showMore: !state.showMore }))
         : null
     );
+
+    this.setState({ renderItemResult: true });
+
+    setTimeout(
+      () => this.setState({ renderItemResult: false, loading: false }),
+      5000
+    );
+
+    setTimeout(() => this.setState({ showItemResult: true }), 5000);
   };
 
   handleResetClick = () => {
     window.location.reload();
+  };
+
+  handleShowMoreOnClick = () => {
+    this.setState({
+      showMoreButton: false,
+      showMore: true
+    });
   };
 
   render() {
@@ -112,12 +134,40 @@ class Home extends Component {
             total={this.state.yearTotal}
           />
         ) : null}
-        {this.state.showResult ? (
+
+        {this.state.showMoreButton ? (
+          <Button
+            variant="outlined"
+            color="secondary"
+            style={styles.button}
+            onClick={this.handleShowMoreOnClick}
+            type="submit"
+          >
+            More?
+          </Button>
+        ) : null}
+        {this.state.showMore ? (
           <Item
             handleInputChange={this.handleInputChange}
             handleOnItemClick={this.handleOnItemClick}
           />
         ) : null}
+
+        {this.state.renderItemResult ? (
+          <div className="sweet-loading">
+            <p>Sending your coordinates to the police...</p>
+            <BarLoader
+              className={override}
+              heightUnit={'px'}
+              height={10}
+              widthUnit={'%'}
+              width={80}
+              color={'#FF69B4'}
+              loading={this.state.loading}
+            />
+          </div>
+        ) : null}
+
         {this.state.showItemResult ? (
           <ItemResult
             item={this.state.item}
