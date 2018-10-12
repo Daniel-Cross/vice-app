@@ -154,7 +154,7 @@ class Home extends Component {
         ) : null}
 
         {this.state.renderItemResult ? (
-          <div className="sweet-loading">
+          <div className="sweeter-loading">
             <p>Sending your coordinates to the police...</p>
             <BarLoader
               className={override}
