@@ -15,6 +15,14 @@ const override = css`
   border-color: red;
 `;
 
+const styles = {
+  button: {
+    margin: '15px',
+    padding: '20px',
+    width: '20%'
+  }
+};
+
 class Home extends Component {
   constructor(props) {
     super(props);
@@ -92,14 +100,6 @@ class Home extends Component {
   };
 
   render() {
-    const styles = {
-      button: {
-        margin: '15px',
-        padding: '20px',
-        width: '20%'
-      }
-    };
-
     return (
       <div className="Home">
         <Logo />
@@ -138,7 +138,7 @@ class Home extends Component {
         {this.state.showMoreButton ? (
           <Button
             variant="outlined"
-            color="secondary"
+            color="primary"
             style={styles.button}
             onClick={this.handleShowMoreOnClick}
             type="submit"
@@ -179,8 +179,9 @@ class Home extends Component {
 
         {this.state.showResult ? (
           <Button
-            variant="contained"
-            color="default"
+            className="Reset"
+            variant="outlined"
+            color="secondary"
             style={styles.button}
             onClick={this.handleResetClick}
             type="submit"

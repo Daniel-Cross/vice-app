@@ -7,12 +7,13 @@ const Logo = () => {
       <div id="container">
         <div className="sign-four">
           VICE
-          <br />
-          <i className="fa fa-usd currency" aria-hidden="true" />
-          <i className="fa fa-eur currency" aria-hidden="true" />
-          <i className="fa fa-gbp currency" aria-hidden="true" />
-          <i className="fa fa-jpy currency" aria-hidden="true" />
-          <i className="fa fa-rub currency" aria-hidden="true" />
+          <div className="currency-logo">
+            <i className="fa fa-usd currency" aria-hidden="true" />
+            <i className="fa fa-eur currency" aria-hidden="true" />
+            <i className="fa fa-gbp currency" aria-hidden="true" />
+            <i className="fa fa-jpy currency" aria-hidden="true" />
+            <i className="fa fa-rub currency" aria-hidden="true" />
+          </div>
         </div>
       </div>
       <p className="tagline">BEAT YOUR VICE</p>

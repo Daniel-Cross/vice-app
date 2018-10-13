@@ -32,39 +32,37 @@ class Item extends Component {
       <div className="Item">
         <div className="inputs">
           <h1 className="desire">WANT SOMETHING?</h1>
-          <Paper className="item-input">
-            <TextField
-              className="classes.textField"
-              label="Item You're Saving For"
-              type="text"
-              name="item"
-              value={this.state.item}
-              margin="normal"
-              variant="outlined"
-              style={styles.width}
-              onChange={this.props.handleInputChange}
-            />
-            <TextField
-              className="item-input"
-              label="Amount Needed (£)"
-              type="number"
-              name="save"
-              value={this.state.save}
-              margin="normal"
-              variant="outlined"
-              style={styles.width}
-              onChange={this.props.handleInputChange}
-            />
-          </Paper>
+          <TextField
+            className="classes.textField"
+            label="Item You're Saving For"
+            type="text"
+            name="item"
+            value={this.state.item}
+            margin="normal"
+            variant="outlined"
+            style={styles.width}
+            onChange={this.props.handleInputChange}
+          />
+          <TextField
+            className="item-input"
+            label="Amount Needed (£)"
+            type="number"
+            name="save"
+            value={this.state.save}
+            margin="normal"
+            variant="outlined"
+            style={styles.width}
+            onChange={this.props.handleInputChange}
+          />
+          <Button
+            variant="contained"
+            color="secondary"
+            style={styles.button}
+            onClick={this.props.handleOnItemClick}
+          >
+            Submit
+          </Button>
         </div>
-        <Button
-          variant="contained"
-          color="secondary"
-          style={styles.button}
-          onClick={this.props.handleOnItemClick}
-        >
-          Submit
-        </Button>
       </div>
     );
   }

@@ -4,7 +4,8 @@
   text-shadow: 2px 2px 1px black;
   margin: auto;
   padding-top: 20px;
-  border-bottom: 2px solid white;
+  display: flex;
+  flex-direction: column;
 }
 
 .logo {
@@ -16,10 +17,21 @@
   letter-spacing: 4px;
 }
 
+@media (min-width: 576px) {
+  .tagline {
+    width: 30%;
+    margin: auto;
+    padding: 15px;
+  }
+}
+
+
 .tagline {
   letter-spacing: 5px;
   margin-bottom: 20px;
   font-size: 12px;
+  border-bottom: 2px solid white;
+  padding-bottom: 15px;
 }
 
 .sign-four {
@@ -28,9 +40,8 @@
   font-family: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/707108/clip.ttf');
   font-size: 60px;
   letter-spacing: 5px;
-  line-height: 6vw;
+  line-height: 3vw;
   margin-top: 5px;
-  margin-right: 2vw;
   /* transform: matrix3d(0.77, 0, -0.64, -.001, 0.00, 1, 0.00, 0, 0.64, 0, 0.77, 0, 0, 0, 0, 1); */
   text-shadow:
     .1vw 0vw .25vw #F0D6DE, .2vw 0vw .25vw #F0D6DE, .4vw 0vw .25vw #F0D6DE,
@@ -44,7 +55,7 @@
 
 .currency {
   color: #FDF8FD;
-  margin-top: 15px;
+  margin-top: 20px;
   padding: 5px;
   font-size: 30px;
   text-shadow:
