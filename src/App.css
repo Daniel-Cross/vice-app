@@ -1,0 +1,9 @@
+.App {
+  color: white;
+  text-align: center;
+  background-color: rgb(32, 32, 32);
+  /* background: linear-gradient(to right top, rgba(0, 0, 0, 0.411) 10%, rgba(5, 7, 12, 0.747) 100%), url('./images/vice.jpeg'); */
+  height: 500px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
