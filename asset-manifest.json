@@ -1,13 +1,13 @@
 {
-  "main.css": "/static/css/main.abf70cfb.chunk.css",
-  "main.js": "/static/js/main.05e39d92.chunk.js",
-  "main.js.map": "/static/js/main.05e39d92.chunk.js.map",
-  "static/js/1.4defdff3.chunk.js": "/static/js/1.4defdff3.chunk.js",
-  "static/js/1.4defdff3.chunk.js.map": "/static/js/1.4defdff3.chunk.js.map",
-  "runtime~main.js": "/static/js/runtime~main.229c360f.js",
-  "runtime~main.js.map": "/static/js/runtime~main.229c360f.js.map",
-  "static/css/main.abf70cfb.chunk.css.map": "/static/css/main.abf70cfb.chunk.css.map",
-  "index.html": "/index.html",
-  "precache-manifest.744d318ff1b3a62d4906e51253e92c58.js": "/precache-manifest.744d318ff1b3a62d4906e51253e92c58.js",
-  "service-worker.js": "/service-worker.js"
+  "main.css": "/vice-app/static/css/main.abf70cfb.chunk.css",
+  "main.js": "/vice-app/static/js/main.6b7ae89c.chunk.js",
+  "main.js.map": "/vice-app/static/js/main.6b7ae89c.chunk.js.map",
+  "static/js/1.b024c30f.chunk.js": "/vice-app/static/js/1.b024c30f.chunk.js",
+  "static/js/1.b024c30f.chunk.js.map": "/vice-app/static/js/1.b024c30f.chunk.js.map",
+  "runtime~main.js": "/vice-app/static/js/runtime~main.c7163b6d.js",
+  "runtime~main.js.map": "/vice-app/static/js/runtime~main.c7163b6d.js.map",
+  "static/css/main.abf70cfb.chunk.css.map": "/vice-app/static/css/main.abf70cfb.chunk.css.map",
+  "index.html": "/vice-app/index.html",
+  "precache-manifest.9872190c99557a4264bb70fe29a3030b.js": "/vice-app/precache-manifest.9872190c99557a4264bb70fe29a3030b.js",
+  "service-worker.js": "/vice-app/service-worker.js"
 }
