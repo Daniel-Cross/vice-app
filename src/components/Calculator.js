@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import '../styles/Calculator.css';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import { Input } from 'react-materialize';
 
 class Calculator extends Component {
   constructor(props) {
@@ -11,14 +12,12 @@ class Calculator extends Component {
 
   render() {
     const styles = {
-      width: {
-        width: '90%',
-        margin: '8px',
-        padding: '8px',
-        Color: '#ffffff',
-        backgroundColor: '#FAFAFA',
-        borderRadius: '4px'
-      },
+      // width: {
+      //   width: '90%',
+      //   margin: '8px',
+      //   padding: '8px',
+      //   Color: '#ffffff'
+      // },
       button: {
         margin: '15px',
         padding: '20px',
@@ -29,7 +28,27 @@ class Calculator extends Component {
     return (
       <div className="Calculator">
         <div className="inputs">
-          <TextField
+          <Input
+            s={6}
+            label="Name Your Vice"
+            type="text"
+            name="vice"
+            style={styles.width}
+            onChange={this.props.handleInputChange}
+            value={this.props.vice}
+          />
+
+          <Input
+            s={6}
+            label="Weekly Amount (£)"
+            type="number"
+            name="amount"
+            style={styles.width}
+            onChange={this.props.handleInputChange}
+            value={this.props.amount}
+          />
+
+          {/* <TextField
             label="Name Your Vice"
             type="text"
             name="vice"
@@ -37,8 +56,8 @@ class Calculator extends Component {
             variant="outlined"
             style={styles.width}
             onChange={this.props.handleInputChange}
-          />
-          <TextField
+          /> */}
+          {/* <TextField
             label="Weekly Amount (£)"
             type="number"
             name="amount"
@@ -46,7 +65,7 @@ class Calculator extends Component {
             variant="outlined"
             style={styles.width}
             onChange={this.props.handleInputChange}
-          />
+          /> */}
 
           <Button
             variant="contained"
