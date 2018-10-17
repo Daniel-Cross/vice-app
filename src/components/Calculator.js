@@ -12,24 +12,32 @@ class Calculator extends Component {
 
   render() {
     const styles = {
-      // width: {
-      //   width: '90%',
-      //   margin: '8px',
-      //   padding: '8px',
-      //   Color: '#ffffff'
-      // },
       button: {
-        margin: '15px',
+        margin: '20px',
         padding: '20px',
-        width: '60%'
+        width: '70%'
       }
     };
+
+    let add;
+    if (this.props.isLoggedIn) {
+      add = (
+        <div className="add">
+          <a className="btn-floating waves-effect waves-light pink">
+            <i className="material-icons">add</i>
+          </a>
+        </div>
+      );
+    } else {
+      add = null;
+    }
 
     return (
       <div className="Calculator">
         <div className="inputs">
           <Input
             s={6}
+            required
             label="Name Your Vice"
             type="text"
             name="vice"
@@ -40,6 +48,7 @@ class Calculator extends Component {
 
           <Input
             s={6}
+            required
             label="Weekly Amount (£)"
             type="number"
             name="amount"
@@ -48,34 +57,19 @@ class Calculator extends Component {
             value={this.props.amount}
           />
 
-          {/* <TextField
-            label="Name Your Vice"
-            type="text"
-            name="vice"
-            value={this.props.vice}
-            variant="outlined"
-            style={styles.width}
-            onChange={this.props.handleInputChange}
-          /> */}
-          {/* <TextField
-            label="Weekly Amount (£)"
-            type="number"
-            name="amount"
-            value={this.props.amount}
-            variant="outlined"
-            style={styles.width}
-            onChange={this.props.handleInputChange}
-          /> */}
+          <div>{add}</div>
 
-          <Button
-            variant="contained"
-            color="primary"
-            style={styles.button}
-            onClick={this.props.handleOnClick}
-            type="submit"
-          >
-            Make Me Feel Bad
-          </Button>
+          <div className="buttons">
+            <Button
+              variant="contained"
+              color="primary"
+              style={styles.button}
+              onClick={this.props.handleOnClick}
+              type="submit"
+            >
+              Make Me Feel Bad
+            </Button>
+          </div>
         </div>
       </div>
     );

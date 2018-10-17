@@ -8,6 +8,7 @@ import ItemResult from './ItemResult';
 import { css } from 'react-emotion';
 import { BarLoader } from 'react-spinners';
 import Button from '@material-ui/core/Button';
+import Facebook from './Facebook';
 
 const override = css`
   display: block;
@@ -20,6 +21,10 @@ const styles = {
     margin: '15px',
     padding: '20px',
     width: '20%'
+  },
+  login: {
+    padding: '5px',
+    marginTop: '100px'
   }
 };
 
@@ -28,7 +33,11 @@ class Home extends Component {
     super(props);
     this.state = {
       vice: '',
+      secondVice: '',
+      thirdVice: '',
       amount: 0,
+      secondAmount: 0,
+      thirdAmount: 0,
       item: '',
       save: 0,
       viceInput: true,
@@ -39,7 +48,12 @@ class Home extends Component {
       renderResult: null,
       renderItemResult: null,
       showMore: false,
-      showMoreButton: false
+      showMoreButton: false,
+      isLoggedIn: false,
+      userId: '',
+      name: '',
+      email: '',
+      picture: ''
     };
   }
 
@@ -99,17 +113,39 @@ class Home extends Component {
     });
   };
 
+  responseFacebook = response => {
+    this.setState({
+      isLoggedIn: true,
+      userId: response.userId,
+      name: response.name,
+      email: response.email,
+      picture: response.picture.data.url
+    });
+  };
+
+  addOnClick = () => {};
+
   render() {
     return (
       <div className="Home">
         <Logo />
         {this.state.viceInput ? (
-          <Calculator
-            handleInputChange={this.handleInputChange}
-            handleOnClick={this.handleOnClick}
-          />
+          <div className="landing">
+            <Calculator
+              handleInputChange={this.handleInputChange}
+              handleOnClick={this.handleOnClick}
+              isLoggedIn={this.state.isLoggedIn}
+            />
+            <Facebook
+              responseFacebook={this.responseFacebook}
+              userId={this.state.userId}
+              isLoggedIn={this.state.isLoggedIn}
+              name={this.state.name}
+              email={this.state.email}
+              picture={this.state.picture}
+            />
+          </div>
         ) : null}
-
         {this.state.renderResult ? (
           <div className="sweet-loading">
             <p>Hold on, just emailing your boss...</p>
@@ -124,7 +160,6 @@ class Home extends Component {
             />
           </div>
         ) : null}
-
         {this.state.showResult ? (
           <Result
             vice={this.state.vice}
@@ -134,7 +169,6 @@ class Home extends Component {
             total={this.state.yearTotal}
           />
         ) : null}
-
         {this.state.showMoreButton ? (
           <Button
             variant="outlined"
@@ -152,7 +186,6 @@ class Home extends Component {
             handleOnItemClick={this.handleOnItemClick}
           />
         ) : null}
-
         {this.state.renderItemResult ? (
           <div className="sweeter-loading">
             <p>Sending your coordinates to the police...</p>
@@ -167,7 +200,6 @@ class Home extends Component {
             />
           </div>
         ) : null}
-
         {this.state.showItemResult ? (
           <ItemResult
             item={this.state.item}
@@ -176,7 +208,6 @@ class Home extends Component {
             vice={this.state.vice}
           />
         ) : null}
-
         {this.state.showResult ? (
           <Button
             className="Reset"
