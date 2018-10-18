@@ -123,7 +123,19 @@ class Home extends Component {
     });
   };
 
-  addOnClick = () => {};
+  handleLogout = () => {
+    this.setState({
+      isLoggedIn: false,
+      userId: '',
+      name: '',
+      email: '',
+      picture: ''
+    });
+  };
+
+  handleAddClick = () => {
+    this.setState({});
+  };
 
   render() {
     return (
@@ -135,6 +147,7 @@ class Home extends Component {
               handleInputChange={this.handleInputChange}
               handleOnClick={this.handleOnClick}
               isLoggedIn={this.state.isLoggedIn}
+              handleAddClick={this.handleAddClick}
             />
             <Facebook
               responseFacebook={this.responseFacebook}
@@ -143,6 +156,7 @@ class Home extends Component {
               name={this.state.name}
               email={this.state.email}
               picture={this.state.picture}
+              handleLogout={this.handleLogout}
             />
           </div>
         ) : null}

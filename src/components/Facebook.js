@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import FacebookLogin from 'react-facebook-login';
+import Button from '@material-ui/core/Button';
 
 class Facebook extends Component {
   constructor(props) {
@@ -14,12 +15,19 @@ class Facebook extends Component {
       fbContent = (
         <div
           style={{
-            width: '50px',
+            width: '100px',
             margin: 'auto'
           }}
         >
           <img src={this.props.picture} alt={this.props.name} />
-          <p>{this.props.name}</p>
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={this.props.handleLogout}
+            type="submit"
+          >
+            Logout
+          </Button>
         </div>
       );
     } else {
