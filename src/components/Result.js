@@ -44,45 +44,43 @@ class Result extends Component {
       ];
       const belowFiveHundred = [
         "Good job! We've all got to live a little right? Everything is fine in moderation, everything...",
-        "Noting to see here!",
+        "Nothing to see here!",
         "Keep Calm - Carry on!",
         "I wish i was you!"
       ];
 
       if (this.props.total > 499 && this.props.total < 999) {
         return overFiveHundred[
-          Math.floor(Math.random() * overFiveHundred.length + 1)
+          Math.floor(Math.random() * overFiveHundred.length)
         ];
       }
       if (this.props.total > 1000 && this.props.total < 2499) {
         return overOneThousand[
-          Math.floor(Math.random() * overOneThousand.length + 1)
+          Math.floor(Math.random() * overOneThousand.length)
         ];
       }
       if (this.props.total > 2500 && this.props.total < 4999) {
         return overTwoThousandFiveHundred[
-          Math.floor(Math.random() * overTwoThousandFiveHundred.length + 1)
+          Math.floor(Math.random() * overTwoThousandFiveHundred.length)
         ];
       }
       if (this.props.total > 5000 && this.props.total < 7499) {
         return overfiveThousand[
-          Math.floor(Math.random() * overfiveThousand.length + 1)
+          Math.floor(Math.random() * overfiveThousand.length)
         ];
       }
       if (this.props.total > 7500 && this.props.total < 9999) {
         return overSevenThousandFiveHundred[
-          Math.floor(Math.random() * overSevenThousandFiveHundred.length + 1)
+          Math.floor(Math.random() * overSevenThousandFiveHundred.length)
         ];
       }
       if (this.props.total > 10000) {
         return overTenThousand[
-          Math.floor(Math.random() * overTenThousand.length + 1)
+          Math.floor(Math.random() * overTenThousand.length)
         ];
       }
       if (this.props.total < 499) {
-        return belowFiveHundred[
-          Math.floor(Math.random() * belowFiveHundred.length + 1)
-        ];
+        return belowFiveHundred[Math.floor(Math.random() * 4)];
       }
     };
     return (
