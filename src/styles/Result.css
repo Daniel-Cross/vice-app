@@ -77,7 +77,6 @@
 
   0%,
   100% {
-    /* Enable hardware acceleration to fix laggy transitions */
     -webkit-transform: translateZ(0);
     -moz-transform: translateZ(0);
     -ms-transform: translateZ(0);
@@ -91,7 +90,6 @@
   }
 
   50% {
-    /* Enable hardware acceleration to fix laggy transitions */
     -webkit-transform: translateZ(0);
     -moz-transform: translateZ(0);
     -ms-transform: translateZ(0);

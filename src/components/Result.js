@@ -81,7 +81,6 @@ class Result extends Component {
         <div className="feedback">
           <span className="ad blink">AD</span>
           <span className="advice">VICE</span>
-
           {feedbackLoop()}
         </div>
       </div>
