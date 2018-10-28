@@ -1,0 +1,33 @@
+.Calculator {
+  background-color: rgb(32, 32, 32);
+  color: white;
+  margin-top: 20px;
+}
+
+.inputs {
+  flex-direction: column;
+  width: 90%;
+  margin: auto;
+}
+
+.input-field label {
+  color: rgb(255, 255, 255);
+}
+
+.input-field input[type=text]:focus+label {
+  color: #F20B70;
+}
+
+.input-field input[type=text]:focus {
+  border-bottom: 1px solid #F20B70;
+  box-shadow: 0 1px 0 0 #F20B70;
+}
+
+.input-field input[type=number]:focus+label {
+  color: #F20B70;
+}
+
+.input-field input[type=number]:focus {
+  border-bottom: 1px solid #F20B70;
+  box-shadow: 0 1px 0 0 #F20B70;
+}
