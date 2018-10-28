@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-// import TextField from '@material-ui/core/TextField';
-// import Paper from '@material-ui/core/Paper';
+import TextField from '@material-ui/core/TextField';
+import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
 import '../styles/Item.css';
-import { Input } from 'react-materialize';
 
 class Item extends Component {
   constructor(props) {
@@ -13,6 +12,15 @@ class Item extends Component {
 
   render() {
     const styles = {
+      background: {
+        backgroundColor: 'rgb(32, 32, 32)',
+        color: 'white'
+      },
+      width: {
+        width: '90%',
+        margin: '5px',
+        padding: '5px'
+      },
       button: {
         margin: '15px',
         padding: '20px',
@@ -24,25 +32,7 @@ class Item extends Component {
       <div className="Item">
         <div className="inputs">
           <h1 className="desire">WANT SOMETHING?</h1>
-
-          <Input
-            s={6}
-            label="Item You're Saving For"
-            type="text"
-            name="item"
-            onChange={this.props.handleInputChange}
-            value={this.state.item}
-          />
-
-          <Input
-            s={6}
-            label="Amount Needed (£)"
-            type="number"
-            name="save"
-            onChange={this.props.handleInputChange}
-            value={this.state.save}
-          />
-          {/* <TextField
+          <TextField
             className="classes.textField"
             label="Item You're Saving For"
             type="text"
@@ -63,10 +53,10 @@ class Item extends Component {
             variant="outlined"
             style={styles.width}
             onChange={this.props.handleInputChange}
-          /> */}
+          />
           <Button
             variant="contained"
-            color="primary"
+            color="secondary"
             style={styles.button}
             onClick={this.props.handleOnItemClick}
           >
