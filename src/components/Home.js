@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
-import '../styles/Home.css';
-import Logo from './Logo';
-import Calculator from './Calculator';
-import Result from './Result';
-import Item from './Item';
-import ItemResult from './ItemResult';
-import { css } from 'react-emotion';
-import { BarLoader } from 'react-spinners';
-import Button from '@material-ui/core/Button';
-import Facebook from './Facebook';
+import React, { Component } from "react";
+import "../styles/Home.css";
+import Logo from "./Logo";
+import Calculator from "./Calculator";
+import Result from "./Result";
+import Item from "./Item";
+import ItemResult from "./ItemResult";
+import { css } from "react-emotion";
+import { BarLoader } from "react-spinners";
+import Button from "@material-ui/core/Button";
+import Facebook from "./Facebook";
 
 const override = css`
   display: block;
@@ -18,13 +18,13 @@ const override = css`
 
 const styles = {
   button: {
-    margin: '15px',
-    padding: '20px',
-    width: '20%'
+    margin: "15px",
+    padding: "20px",
+    width: "20%"
   },
   login: {
-    padding: '5px',
-    marginTop: '100px'
+    padding: "5px",
+    marginTop: "100px"
   }
 };
 
@@ -32,13 +32,13 @@ class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      vice: '',
-      secondVice: '',
-      thirdVice: '',
+      vice: "",
+      secondVice: "",
+      thirdVice: "",
       amount: 0,
       secondAmount: 0,
       thirdAmount: 0,
-      item: '',
+      item: "",
       save: 0,
       viceInput: true,
       showItemResult: false,
@@ -50,10 +50,10 @@ class Home extends Component {
       showMore: false,
       showMoreButton: false,
       isLoggedIn: false,
-      userId: '',
-      name: '',
-      email: '',
-      picture: ''
+      userId: "",
+      name: "",
+      email: "",
+      picture: ""
     };
   }
 
@@ -76,12 +76,12 @@ class Home extends Component {
 
     setTimeout(
       () => this.setState({ renderResult: false, showResult: false }),
-      5000
+      2500
     );
 
     setTimeout(
       () => this.setState({ showResult: true, showMoreButton: true }),
-      5000
+      2500
     );
   };
 
@@ -126,10 +126,10 @@ class Home extends Component {
   handleLogout = () => {
     this.setState({
       isLoggedIn: false,
-      userId: '',
-      name: '',
-      email: '',
-      picture: ''
+      userId: "",
+      name: "",
+      email: "",
+      picture: ""
     });
   };
 
@@ -162,14 +162,16 @@ class Home extends Component {
         ) : null}
         {this.state.renderResult ? (
           <div className="sweet-loading">
-            <p>Hold on, just emailing your boss...</p>
+            {/*<p>Hold on, just emailing your boss...</p>*/}
+            <p className="flow-text">Calculating..</p>
+
             <BarLoader
               className={override}
-              heightUnit={'px'}
+              heightUnit={"px"}
               height={10}
-              widthUnit={'%'}
+              widthUnit={"%"}
               width={80}
-              color={'#FF69B4'}
+              color={"#FF69B4"}
               loading={this.state.loading}
             />
           </div>
@@ -191,7 +193,7 @@ class Home extends Component {
             onClick={this.handleShowMoreOnClick}
             type="submit"
           >
-            More?
+            Are you saving for something?{" "}
           </Button>
         ) : null}
         {this.state.showMore ? (
@@ -202,14 +204,14 @@ class Home extends Component {
         ) : null}
         {this.state.renderItemResult ? (
           <div className="sweeter-loading">
-            <p>Sending your coordinates to the police...</p>
+            <p>Calculating...</p>
             <BarLoader
               className={override}
-              heightUnit={'px'}
+              heightUnit={"px"}
               height={10}
-              widthUnit={'%'}
+              widthUnit={"%"}
               width={80}
-              color={'#FF69B4'}
+              color={"#FF69B4"}
               loading={this.state.loading}
             />
           </div>
@@ -231,7 +233,7 @@ class Home extends Component {
             onClick={this.handleResetClick}
             type="submit"
           >
-            Reset
+            Start again
           </Button>
         ) : null}
       </div>

@@ -10,7 +10,6 @@ class Result extends Component {
   render() {
     const commentGenerator = () => {
       const overFiveHundred = [
-        "Could be worse, the guy before you was spending £10,000 a year on cucumbers. We don't ask questions...",
         "You're doing fine, everything in moderation!",
         "Nothing to see here",
         "Nice work",
@@ -27,21 +26,17 @@ class Result extends Component {
         "Thats a deposit on a small house"
       ];
       const overfiveThousand = [
-        "WTF! Seriously!? Wow... you're a special kind of pervert... and your parents said you would never amount to anything, look at you now, they must be so proud.",
+        "You need to re-think your life choices",
         "Thats a deposit on a large house!",
         "Dont you think that money could of been spent a little better?"
       ];
       const overSevenThousandFiveHundred = [
         "And your parents said you would never amount to anything, look at you now, they must be so proud...",
-        "My car didn't cost this much",
+        "My car didn't cost that much!",
         "You may need to re think so life choices"
       ];
-      const overTenThousand = [
-        "You are going to die very soon. Probably for the best because you have no friends and no one likes you anyway.",
-        "Get..Help..Now!",
-        "Please seek help!",
-        "R.I.P"
-      ];
+      const overTenThousand = ["Get..Help..Now!", "Please seek help!", "R.I.P"];
+
       const belowFiveHundred = [
         "Good job! We've all got to live a little right? Everything is fine in moderation, everything...",
         "Nothing to see here!",
@@ -87,17 +82,17 @@ class Result extends Component {
       <div className="Result">
         <h1 className="result-title">RESULT</h1>
         <div className="result-body">
-          <div className="result-1">
+          <div className="result-1 flow-text">
             <p>
               {`You spend £${this.props.amount} a week on ${this.props.vice}.`}
             </p>
           </div>
 
-          <div className="result-2">
+          <div className="result-2 flow-text">
             <p>{`That's £${this.props.amount * 4} a month.`}</p>
           </div>
 
-          <div className="result-3">
+          <div className="result-3 flow-text">
             <p>{`And £${this.props.amount * 52} a year...`}</p>
           </div>
         </div>
@@ -107,7 +102,7 @@ class Result extends Component {
           <span className="advice">VICE</span>
         </div>
         <div className="comment">
-          <p className="humor">{commentGenerator()}</p>
+          <p className="humor flow-text">{commentGenerator()}</p>
         </div>
       </div>
     );
