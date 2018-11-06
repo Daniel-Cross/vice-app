@@ -18,21 +18,21 @@ class Calculator extends Component {
       }
     };
 
-    let add;
-    if (this.props.isLoggedIn) {
-      add = (
-        <div className="add">
-          <a
-            className="btn-floating waves-effect waves-light pink"
-            onClick={this.props.handleAddClick}
-          >
-            <i className="material-icons">add</i>
-          </a>
-        </div>
-      );
-    } else {
-      add = null;
-    }
+    // let add;
+    // if (this.props.isLoggedIn) {
+    //   add = (
+    //     <div className="add">
+    //       <a
+    //         className="btn-floating waves-effect waves-light pink"
+    //         onClick={this.props.handleAddClick}
+    //       >
+    //         <i className="material-icons">add</i>
+    //       </a>
+    //     </div>
+    //   );
+    // } else {
+    //   add = null;
+    // }
 
     return (
       <div className="Calculator">
@@ -58,8 +58,6 @@ class Calculator extends Component {
             onChange={this.props.handleInputChange}
             value={this.props.amount}
           />
-
-          <div>{add}</div>
 
           <div className="buttons">
             <Button

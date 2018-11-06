@@ -33,11 +33,7 @@ class Home extends Component {
     super(props);
     this.state = {
       vice: '',
-      secondVice: '',
-      thirdVice: '',
       amount: 0,
-      secondAmount: 0,
-      thirdAmount: 0,
       item: '',
       save: 0,
       viceInput: true,
