@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import '../styles/Calculator.css';
-import Button from '@material-ui/core/Button';
-import { Input } from 'react-materialize';
+import React, { Component } from "react";
+import "../styles/Calculator.css";
+import Button from "@material-ui/core/Button";
+import { Input } from "react-materialize";
 
 class Calculator extends Component {
   constructor(props) {
@@ -12,9 +12,9 @@ class Calculator extends Component {
   render() {
     const styles = {
       button: {
-        margin: '20px',
-        padding: '20px',
-        width: '70%'
+        margin: "20px",
+        padding: "20px",
+        width: "70%"
       }
     };
 
@@ -40,7 +40,7 @@ class Calculator extends Component {
           <Input
             s={6}
             required
-            label="Name Your Vice"
+            label="Enter your vice here!"
             type="text"
             name="vice"
             style={styles.width}
@@ -51,7 +51,7 @@ class Calculator extends Component {
           <Input
             s={6}
             required
-            label="Weekly Amount (£)"
+            label="How much do you spend each week? (£)"
             type="number"
             name="amount"
             style={styles.width}
@@ -67,7 +67,7 @@ class Calculator extends Component {
               onClick={this.props.handleOnClick}
               type="submit"
             >
-              Make Me Feel Bad
+              Show me the money!
             </Button>
           </div>
         </div>

@@ -1,22 +1,14 @@
-import React from 'react';
-import '../styles/Logo.css';
+import React from "react";
+import "../styles/Logo.css";
 
 const Logo = () => {
   return (
     <div className="Logo">
       <div id="container">
-        <div className="sign-four">
-          VICE
-          <div className="currency-logo">
-            <i className="fa fa-usd currency" aria-hidden="true" />
-            <i className="fa fa-eur currency" aria-hidden="true" />
-            <i className="fa fa-gbp currency" aria-hidden="true" />
-            <i className="fa fa-jpy currency" aria-hidden="true" />
-            <i className="fa fa-rub currency" aria-hidden="true" />
-          </div>
-        </div>
+        <div className="sign-four">VICE</div>
+        <br />
       </div>
-      <p className="tagline">BEAT YOUR VICE</p>
+      <p className="tagline">CALCULATE THE COST OF YOUR VICES!</p>
     </div>
   );
 };
