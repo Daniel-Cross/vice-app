@@ -36,11 +36,7 @@ class Home extends Component {
     this.state = {
       vice: '',
       vices: [],
-      secondVice: '',
-      thirdVice: '',
       amount: 0,
-      secondAmount: 0,
-      thirdAmount: 0,
       item: '',
       save: 0,
       viceInput: true,
@@ -102,6 +98,15 @@ class Home extends Component {
       );
     });
 
+    setTimeout(
+      () => this.setState({ renderResult: false, showResult: false }),
+      2500
+    );
+
+    setTimeout(
+      () => this.setState({ showResult: true, showMoreButton: true }),
+      2500
+    );
   };
 
   handleOnItemClick = () => {
@@ -190,7 +195,9 @@ class Home extends Component {
         ) : null}
         {this.state.renderResult ? (
           <div className="sweet-loading">
-            <p>Hold on, just emailing your boss...</p>
+            {/*<p>Hold on, just emailing your boss...</p>*/}
+            <p className="flow-text">Calculating..</p>
+
             <BarLoader
               className={override}
               heightUnit={'px'}
@@ -219,7 +226,7 @@ class Home extends Component {
             onClick={this.handleShowMoreOnClick}
             type="submit"
           >
-            More?
+            Are you saving for something?{' '}
           </Button>
         ) : null}
         {this.state.showMore ? (
@@ -230,7 +237,7 @@ class Home extends Component {
         ) : null}
         {this.state.renderItemResult ? (
           <div className="sweeter-loading">
-            <p>Sending your coordinates to the police...</p>
+            <p>Calculating...</p>
             <BarLoader
               className={override}
               heightUnit={'px'}
@@ -259,7 +266,7 @@ class Home extends Component {
             onClick={this.handleResetClick}
             type="submit"
           >
-            Reset
+            Start again
           </Button>
         ) : null}
         <Button
