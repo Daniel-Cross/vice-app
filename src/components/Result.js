@@ -98,7 +98,7 @@ class Result extends Component {
         </div>
 
         <div className="feedback">
-          <span className="ad">AD</span>
+          <span className="ad blink">AD</span>
           <span className="advice">VICE</span>
         </div>
         <div className="comment">

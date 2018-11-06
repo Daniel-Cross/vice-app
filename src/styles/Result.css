@@ -62,3 +62,43 @@
     .1vw 0vw 4vw #F20B70, .2vw 0vw 20vw #F20B70, .4vw 0vw 10vw #F20B70,
     .1vw 0vw 10vw #F20B70, .2vw 0vw 30vw #F20B70, .4vw 0vw 10vw #F20B70;
 }
+
+.blink {
+  animation: heart .1s 0s ease infinite;
+  -moz-animation: heart .1s ease infinite;
+  /* Firefox */
+  -webkit-animation: heart .1s ease infinite;
+  /* Safari and Chrome */
+  -o-animation: heart .1s ease infinite;
+  /* Opera */
+}
+
+@keyframes heart {
+
+  0%,
+  100% {
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
+    color: #F0D6DE;
+    text-shadow:
+      -.1vw 0vw .25vw #F0D6DE, -.2vw 0vw .25vw #F0D6DE, -.4vw 0vw .25vw #F0D6DE,
+      -.1vw 0vw 1vw #F181B2, -.2vw 0vw .8vw #F181B2, -.4vw 0vw .8vw #F181B2, .2vw 0vw .5vw #F181B2,
+      -.1vw 0vw 10vw #F20B70, -.2vw 0vw 10vw #F20B70, -.4vw 0vw 10vw #F20B70;
+  }
+
+  50% {
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
+    color: #8F5493;
+    text-shadow:
+      -.1vw 0vw .25vw #8F5493, -.2vw 0vw .25vw #8F5493, -.4vw 0vw .25vw #8F5493,
+      -.1vw 0vw .8vw #59125E, -.2vw 0vw .8vw #59125E, -.4vw 0vw .8vw #59125E, .2vw 0vw .5vw #59125E,
+      -.1vw 0vw 3vw #42114E, -.2vw 0vw 3vw #42114E, -.4vw 0vw 3vw #42114E;
+  }
+}
