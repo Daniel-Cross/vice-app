@@ -75,28 +75,29 @@ class Home extends Component {
     this.setState({ yearTotal: this.state.amount * 52 });
 
     // Save vice to the database
-    axios.post('http://localhost:3001/vices', {
-      name: this.state.vice,
-      amount: this.state.amount
-    }).then((response) => {
+    axios
+      .post('http://localhost:3001/vices', {
+        name: this.state.vice,
+        amount: this.state.amount
+      })
+      .then(response => {
+        const vices = this.state.vices;
+        vices.push(response.data);
 
-      const vices = this.state.vices;
-      vices.push(response.data);
+        this.setState({
+          vices: vices
+        });
 
-      this.setState({
-        vices: vices
+        setTimeout(
+          () => this.setState({ renderResult: false, showResult: false }),
+          5000
+        );
+
+        setTimeout(
+          () => this.setState({ showResult: true, showMoreButton: true }),
+          5000
+        );
       });
-
-      setTimeout(
-        () => this.setState({ renderResult: false, showResult: false }),
-        5000
-      );
-  
-      setTimeout(
-        () => this.setState({ showResult: true, showMoreButton: true }),
-        5000
-      );
-    });
 
     setTimeout(
       () => this.setState({ renderResult: false, showResult: false }),
@@ -143,7 +144,7 @@ class Home extends Component {
         showHistory: true,
         vices: response.data
       });
-    })
+    });
   };
 
   responseFacebook = response => {
@@ -279,9 +280,7 @@ class Home extends Component {
           Show Saved Vices
         </Button>
         {this.state.showHistory ? (
-          <ViceHistory
-            vices={this.state.vices}
-          />
+          <ViceHistory vices={this.state.vices} />
         ) : null}
       </div>
     );
