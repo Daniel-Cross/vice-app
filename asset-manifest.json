@@ -1,13 +1,13 @@
 {
-  "main.css": "/vice-app/static/css/main.b2ea7d55.chunk.css",
-  "main.js": "/vice-app/static/js/main.47a8fedf.chunk.js",
-  "main.js.map": "/vice-app/static/js/main.47a8fedf.chunk.js.map",
-  "static/js/1.3d9e0638.chunk.js": "/vice-app/static/js/1.3d9e0638.chunk.js",
-  "static/js/1.3d9e0638.chunk.js.map": "/vice-app/static/js/1.3d9e0638.chunk.js.map",
+  "main.css": "/vice-app/static/css/main.8c573db3.chunk.css",
+  "main.js": "/vice-app/static/js/main.434389e1.chunk.js",
+  "main.js.map": "/vice-app/static/js/main.434389e1.chunk.js.map",
+  "static/js/1.1ee8ba2a.chunk.js": "/vice-app/static/js/1.1ee8ba2a.chunk.js",
+  "static/js/1.1ee8ba2a.chunk.js.map": "/vice-app/static/js/1.1ee8ba2a.chunk.js.map",
   "runtime~main.js": "/vice-app/static/js/runtime~main.c7163b6d.js",
   "runtime~main.js.map": "/vice-app/static/js/runtime~main.c7163b6d.js.map",
-  "static/css/main.b2ea7d55.chunk.css.map": "/vice-app/static/css/main.b2ea7d55.chunk.css.map",
+  "static/css/main.8c573db3.chunk.css.map": "/vice-app/static/css/main.8c573db3.chunk.css.map",
   "index.html": "/vice-app/index.html",
-  "precache-manifest.68c2239114e1cf2289b3146155b26e51.js": "/vice-app/precache-manifest.68c2239114e1cf2289b3146155b26e51.js",
+  "precache-manifest.68a254f237ebb4ed7bec9a513c657b78.js": "/vice-app/precache-manifest.68a254f237ebb4ed7bec9a513c657b78.js",
   "service-worker.js": "/vice-app/service-worker.js"
 }

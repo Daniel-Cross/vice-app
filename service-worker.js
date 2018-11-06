@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.2/workbox-sw.js");
 
 importScripts(
-  "/vice-app/precache-manifest.68c2239114e1cf2289b3146155b26e51.js"
+  "/vice-app/precache-manifest.68a254f237ebb4ed7bec9a513c657b78.js"
 );
 
 workbox.clientsClaim();
