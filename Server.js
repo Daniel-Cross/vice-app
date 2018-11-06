@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const path = require('path');
@@ -11,6 +12,7 @@ require('dotenv').config({
 const app = express();
 mongoose.connect(process.env.DATABASE_CONN, { useNewUrlParser: true });
 
+app.use(cors());
 app.use(bodyParser.json());
 app.post('/vices', ViceController.post);
 app.get('/vices', ViceController.list);

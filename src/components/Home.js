@@ -5,10 +5,12 @@ import Calculator from './Calculator';
 import Result from './Result';
 import Item from './Item';
 import ItemResult from './ItemResult';
+import ViceHistory from './ViceHistory';
 import { css } from 'react-emotion';
 import { BarLoader } from 'react-spinners';
 import Button from '@material-ui/core/Button';
 import Facebook from './Facebook';
+import axios from 'axios';
 
 const override = css`
   display: block;
@@ -33,6 +35,7 @@ class Home extends Component {
     super(props);
     this.state = {
       vice: '',
+      vices: [],
       amount: 0,
       item: '',
       save: 0,
@@ -45,6 +48,7 @@ class Home extends Component {
       renderItemResult: null,
       showMore: false,
       showMoreButton: false,
+      showHistory: false,
       isLoggedIn: false,
       userId: '',
       name: '',
@@ -69,6 +73,30 @@ class Home extends Component {
     this.setState({ renderResult: true });
 
     this.setState({ yearTotal: this.state.amount * 52 });
+
+    // Save vice to the database
+    axios.post('http://localhost:3001/vices', {
+      name: this.state.vice,
+      amount: this.state.amount
+    }).then((response) => {
+
+      const vices = this.state.vices;
+      vices.push(response.data);
+
+      this.setState({
+        vices: vices
+      });
+
+      setTimeout(
+        () => this.setState({ renderResult: false, showResult: false }),
+        5000
+      );
+  
+      setTimeout(
+        () => this.setState({ showResult: true, showMoreButton: true }),
+        5000
+      );
+    });
 
     setTimeout(
       () => this.setState({ renderResult: false, showResult: false }),
@@ -107,6 +135,15 @@ class Home extends Component {
       showMoreButton: false,
       showMore: true
     });
+  };
+
+  handleShowHistory = () => {
+    axios.get('http://localhost:3001/vices').then(response => {
+      this.setState({
+        showHistory: true,
+        vices: response.data
+      });
+    })
   };
 
   responseFacebook = response => {
@@ -231,6 +268,20 @@ class Home extends Component {
           >
             Start again
           </Button>
+        ) : null}
+        <Button
+          variant="outlined"
+          color="primary"
+          style={styles.button}
+          onClick={this.handleShowHistory}
+          type="button"
+        >
+          Show Saved Vices
+        </Button>
+        {this.state.showHistory ? (
+          <ViceHistory
+            vices={this.state.vices}
+          />
         ) : null}
       </div>
     );
